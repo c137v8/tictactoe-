@@ -46,6 +46,7 @@ void print_board(int board[3][3])
      for (int i = 0; i < 3; i++) {
         cout << endl;
         cout << i;
+        
         for (int j = 0; j < 3; j++)
         {
             
@@ -53,7 +54,10 @@ void print_board(int board[3][3])
            if (board[i][j] == 2 ) cout <<  "o ";
            if (board[i][j] == 0 ) cout <<  "- "; 
         }
+      
+        
      }
+       cout<< endl;
 }
 
 
@@ -65,6 +69,20 @@ int minimax(int depth , bool ismax, int board[3][3])
     
 }
 
+int add_move(int board[3][3], int player)
+{
+     for (int i = 0; i < 3; i++) { 
+        for (int j = 0; j < 3; j++)
+        {
+           if (board[i][j] == 0 ) board[i][j] = player; 
+           else continue;
+           return player;
+           
+
+        }
+        
+     }
+}
 
 
 
@@ -72,4 +90,8 @@ int minimax(int depth , bool ismax, int board[3][3])
 int main() 
 {
 	print_board(tic_board);
+    add_move(tic_board,2);
+    add_move(tic_board,1);
+    cout<< add_move(tic_board,2);
+    print_board(tic_board);
 }

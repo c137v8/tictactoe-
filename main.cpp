@@ -1,6 +1,9 @@
 #include<iostream>
 using namespace std;
 
+
+//1 is representation for x and 2 is representation for o
+//- represents unfilled space in the board 
 int tic_board[3][3]{{0,0,0},{0,0,0},{0,0,0}};
 
 int checkBoard(int board[3][3]) {
@@ -39,14 +42,29 @@ int checkBoard(int board[3][3]) {
 
 void print_board(int board[3][3]) 
 {
+    cout << " 0 1 2 3";
      for (int i = 0; i < 3; i++) {
         cout << endl;
+        cout << i;
         for (int j = 0; j < 3; j++)
         {
-            cout << board[i][j] << " ";
+            
+           if (board[i][j] == 1 ) cout <<  "x ";
+           if (board[i][j] == 2 ) cout <<  "o ";
+           if (board[i][j] == 0 ) cout <<  "- "; 
         }
      }
 }
+
+
+
+
+
+int minimax(int depth , bool ismax, int board[3][3])
+{
+    
+}
+
 
 
 //int main(int argc, char *argv[])
